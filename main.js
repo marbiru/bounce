@@ -1,7 +1,10 @@
-var start = new Date;
+var counter = 0;
 
-setInterval(function() {
-    $('.Timer').text((new Date - start) / 1000 + " Seconds");
+setInterval(function () {
+  ++counter;
 }, 1000);
 
+$(function(){
+	$("#points_counter").text(counter);
+});
 
