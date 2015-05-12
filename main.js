@@ -18,7 +18,7 @@ $(document).keydown(function(e) {
         break;
 
         case 38: // up
-        $( "#dummy_text" ).html( "dummy up" );
+        ball.vy = ball.vy + 1;
         break;
 
         case 39: // right

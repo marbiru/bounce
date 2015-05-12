@@ -62,6 +62,29 @@ function update() {
 	// Ohh! The ball is moving!
 	// Lets add some acceleration
 	ball.vy += gravity;
+	$(document).keydown(function(e) {
+    	switch(e.which) {
+    		case 37: // left
+        	break;
+        	
+        	case 38: // up
+        	ball.vy = ball.vy + 0.01;
+        	$( "#dummy_text" ).html( "dummy up" );
+        	//$( "#dummy_text" ).html( "baaaaa" );
+        	break;
+
+        	case 39: // right
+        	break;
+
+        	case 40: // down
+        	ball.vy = ball.vy - 0.01;
+        	$( "#dummy_text" ).html( "dummy down" );
+        	break;
+
+        	default: return; // exit this handler for other keys
+    	}	
+    	e.preventDefault(); // prevent the default action (scroll / move caret)
+	});
 	//Perfect! Now, lets make it rebound when it touches the floor
 	if(ball.y + ball.radius > H) {
 		// First, reposition the ball on top of the floor and then bounce it!
@@ -75,6 +98,3 @@ function update() {
 // in setInterval, 1000/x depicts x fps! So, in this casse, we are aiming for 60fps for smoother animations.
 setInterval(update, 1000/60);
 
-// This completes the tutorial here. Try experimenting with different values to get a better understanding.
-
-// Also, try playing with the x-component of velocity ;)
