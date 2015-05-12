@@ -1,8 +1,8 @@
 $(function() {
-    var cnt = 0;
-		var counter = setInterval(function() {
-                    $( "#points_counter").html( cnt );
-                    cnt++;
-                	},
- 					10);
+	var count = 5000
+    var time_elapsed = 0;
+		var run_counter = setInterval(function() {
+                    $( "#points_counter").html( count - time_elapsed );
+                    time_elapsed++;
+                	}, 10);
 });
