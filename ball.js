@@ -81,12 +81,6 @@ function update() {
 	}
 }
 
-$(function() {
-	setInterval(function() {
-                    $( "#dummy_text" ).html( Math.round(ball.y) );
-                	}, 10);
-});
-
 // Now, the animation time!
 // in setInterval, 1000/x depicts x fps! So, in this casse, we are aiming for 60fps for smoother animations.
 setInterval(update, 1000/60);

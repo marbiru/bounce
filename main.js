@@ -9,26 +9,29 @@ $(function() {
                 	}, 10);
 });
 
+// dialog pops up when you win the level
 
-// when you press the up arrow the ball slows down
 
-$(document).keydown(function(e) {
-    switch(e.which) {
-        case 37: // left
-        break;
+$(function() {
+    setInterval(function() {
+                    $( "#dummy_text" ).html( Math.round(ball.y) );
+                    }, 10);
+});
 
-        case 38: // up
-        ball.vy = ball.vy + 1;
-        break;
-
-        case 39: // right
-        break;
-
-        case 40: // down
-        $( "#dummy_text" ).html( "dummy down" );
-        break;
-
-        default: return; // exit this handler for other keys
-    }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
+$(function() {
+    $( "#level_win" ).dialog({
+      autoOpen: false,
+      show: {
+        effect: "puff",
+        duration: 500
+      },
+      hide: {
+        effect: "scale",
+        duration: 500
+      }
+    });
+    
+    $( "#dummy_text" ).click(function() {
+      $( "#level_win" ).dialog( "open" );
+    });
 });
