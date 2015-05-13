@@ -27,7 +27,7 @@ var ball = {},
 
 ball = {
 	x: W/2,
-	y: 5,
+	y: 500,
 	
 	radius: 15,
 	color: "red",
@@ -80,6 +80,12 @@ function update() {
 		// The bounceFactor variable that we created decides the elasticity or how elastic the collision will be. If it's 1, then the collision will be perfectly elastic. If 0, then it will be inelastic.
 	}
 }
+
+$(function() {
+	setInterval(function() {
+                    $( "#dummy_text" ).html( Math.round(ball.y) );
+                	}, 10);
+});
 
 // Now, the animation time!
 // in setInterval, 1000/x depicts x fps! So, in this casse, we are aiming for 60fps for smoother animations.
