@@ -5,10 +5,15 @@ $(function() {
     var time_elapsed = 0;
 		var run_counter = setInterval(function() {
                     $( "#points_counter" ).html( start_points - time_elapsed );
-                    time_elapsed++;
+                    if (time_elapsed <= start_points) {
+                	time_elapsed += 1;
+            	    }
                 	}, 10);
 });
 
+
+            $( "#points_counter_2" ).html( start_points - time_elapsed );
+          
 // dialog pops up when you win the level
 
 
