@@ -14,9 +14,20 @@ $(function() {
 
 $(function() {
     setInterval(function() {
-                    $( "#dummy_text" ).html( Math.round(ball.y) );
+                    $( "#current_height" ).html( Math.round(ball.y) );
                     }, 10);
 });
+
+$(function() {
+    setInterval(function() {
+                if ( ball.y > 0) {
+                    $( "#dummy_text" ).html( "waiting...") 
+                } else {
+                    $( "#dummy_text" ).html( "it worked!..." ) 
+                };
+            }, 10);
+});
+
 
 $(function() {
     $( "#level_win" ).dialog({
@@ -29,9 +40,5 @@ $(function() {
         effect: "scale",
         duration: 500
       }
-    });
-    
-    $( "#dummy_text" ).click(function() {
-      $( "#level_win" ).dialog( "open" );
     });
 });
