@@ -20,25 +20,27 @@ $(function() {
 
 $(function() {
     setInterval(function() {
-                if ( ball.y > 0) {
-                    $( "#dummy_text" ).html( "waiting...") 
+                if ( ball.y > 400) {
+                    $( "#dummy_text" ).html( "waiting...." ) 
                 } else {
-                    $( "#dummy_text" ).html( "it worked!..." ) 
+                    $( "#dummy_text" ).html( level_win() ) 
                 };
             }, 10);
 });
 
 
-$(function() {
-    $( "#level_win" ).dialog({
-      autoOpen: false,
-      show: {
-        effect: "puff",
-        duration: 500
-      },
-      hide: {
-        effect: "scale",
-        duration: 500
-      }
+function level_win() {
+    $(function() {
+        $( "#level_win" ).dialog({
+
+          show: {
+            effect: "puff",
+            duration: 500
+       },
+          hide: {
+            effect: "scale",
+            duration: 500
+          }
+      });
     });
-});
+};
