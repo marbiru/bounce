@@ -20,14 +20,14 @@ $(function() {
 
 $(function() {
     setInterval(function() {
-                if ( ball.y > 400) {
-                    $( "#dummy_text" ).html( "waiting...." ) 
+                if ( ball.y > 0) {
+                    $( "#dummy_text" ).html( "" ) 
                 } else {
-                    $( "#dummy_text" ).html( level_win() ) 
+                    $( "#dummy_text" ).html( level_win() );
+                    $( "#level_points" ).html( points_counter.innerHTML );
                 };
             }, 10);
 });
-
 
 function level_win() {
     $(function() {
@@ -43,4 +43,9 @@ function level_win() {
           }
       });
     });
+
+    level_win_text.innerHTML =
+    "Yeah! You won this level! <br /><br />" +
+    "You scored " + points_counter.innerHTML + " points."
+
 };

@@ -27,7 +27,7 @@ var ball = {},
 
 ball = {
 	x: W/2,
-	y: 500,
+	y: 300,
 	
 	radius: 15,
 	color: "red",
