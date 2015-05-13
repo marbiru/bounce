@@ -64,23 +64,10 @@ function update() {
 	ball.vy += gravity;
 	$(document).keydown(function(e) {
     	switch(e.which) {
-    		case 37: // left
-        	break;
-        	
         	case 38: // up
         	ball.vy = ball.vy + 0.01;
-        	$( "#dummy_text" ).html( "dummy up" );
-        	//$( "#dummy_text" ).html( "baaaaa" );
         	break;
-
-        	case 39: // right
-        	break;
-
-        	case 40: // down
-        	ball.vy = ball.vy - 0.01;
-        	$( "#dummy_text" ).html( "dummy down" );
-        	break;
-
+        	
         	default: return; // exit this handler for other keys
     	}	
     	e.preventDefault(); // prevent the default action (scroll / move caret)
