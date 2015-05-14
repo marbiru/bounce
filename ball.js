@@ -98,8 +98,8 @@ function update() {
 		ball.vx *= -bounceFactor;
 	};
 
-	if(ball.x - ball.radius > 0) {
-		ball.x = W + ball.radius;
+	if(ball.x - ball.radius < 0) {
+		ball.x = 0 + ball.radius;
 		ball.vx *= -bounceFactor;
 	};
 }
