@@ -33,7 +33,7 @@ ball = {
 	color: "red",
 	
 	// Velocity components
-	vx: 0,
+	vx: 0.2,
 	vy: 1,
 	
 	draw: function() {
@@ -59,6 +59,7 @@ function update() {
 	
 	// Now, lets make the ball move by adding the velocity vectors to its position
 	ball.y += ball.vy;
+	ball.x += ball.vx;
 	// Ohh! The ball is moving!
 	// Lets add some acceleration
 	ball.vy += gravity;
