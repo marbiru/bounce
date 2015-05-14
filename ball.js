@@ -5,8 +5,9 @@ var canvas = document.getElementById("canvas"),
 		ctx = canvas.getContext("2d");
 
 // Now setting the width and height of the canvas
-var W = 350,
-		H = 450;
+var W = 350;
+
+var H = 450;
 
 // Applying these to the canvas element
 canvas.height = H; canvas.width = W;
@@ -14,9 +15,11 @@ canvas.height = H; canvas.width = W;
 // First of all we'll create a ball object which will contain all the methods and variables specific to the ball.
 // Lets define some variables first
 
-var ball = {},
-		gravity = 0.2,
-		bounceFactor = 0.7;
+var ball = {};
+
+var gravity = 0.2;
+
+var bounceFactor = 0.7;
 
 // The ball object
 // It will contain the following details
