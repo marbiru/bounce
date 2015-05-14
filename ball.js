@@ -37,7 +37,7 @@ ball = {
 	color: "red",
 	
 	// Velocity components
-	vx: 0,
+	vx: 0.2,
 	vy: 1,
 	
 	draw: function() {
@@ -70,6 +70,14 @@ function update() {
     	switch(e.which) {
         	case 38: // up
         	ball.vy = ball.vy + 0.01;
+        	break;
+        	
+        	case 37: // left
+        	ball.vx = ball.vx - 0.01;
+        	break;
+        	
+        	case 39: // right
+        	ball.vx = ball.vx + 0.01;
         	break;
         	
         	default: return; // exit this handler for other keys
