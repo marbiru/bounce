@@ -91,7 +91,17 @@ function update() {
 		ball.y = H - ball.radius;
 		ball.vy *= -bounceFactor;
 		// The bounceFactor variable that we created decides the elasticity or how elastic the collision will be. If it's 1, then the collision will be perfectly elastic. If 0, then it will be inelastic.
-	}
+	};
+	// now sideways bounce!
+	if(ball.x + ball.radius > W) {
+		ball.x = W - ball.radius;
+		ball.vx *= -bounceFactor;
+	};
+
+	if(ball.x - ball.radius > 0) {
+		ball.x = W + ball.radius;
+		ball.vx *= -bounceFactor;
+	};
 }
 
 // Now, the animation time!
