@@ -11,7 +11,8 @@ var canvas_width = 350;
 var canvas_height = 450;
 
 // Applying these to the canvas element
-canvas.height = canvas_height; canvas.width = canvas_width;
+canvas.height = canvas_height; 
+canvas.width = canvas_width;
 
 // First of all we'll create a ball object which will contain all the methods and variables specific to the ball.
 // Lets define some variables first
@@ -69,7 +70,7 @@ function update() {
 	ball.vy += gravity;
 	$(document).keydown(function(e) {
     	switch(e.which) {
-        	case 38: // up
+        	case 40: // down
         	ball.vy = ball.vy + 0.01;
         	break;
         	
@@ -91,6 +92,10 @@ function update() {
 		ball.y = canvas_height - ball.radius;
 		ball.vy *= -bounce_factor;
 		// The bounceFactor variable that we created decides the elasticity or how elastic the collision will be. If it's 1, then the collision will be perfectly elastic. If 0, then it will be inelastic.
+	if(ball.x + ball.radius > canvas_width) {
+		// First, reposition the ball on top of the floor and then bounce it!
+		ball.x = canvas_width - ball.radius;
+		ball.vx *= -bounce_factor;
 	}
 }
 

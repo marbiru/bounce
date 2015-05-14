@@ -1,21 +1,17 @@
 // the timer/points-counter: starts at some number of points and counts down to zero. The faster you complete the level, the more points you'll have
 
 $(function() {
-	var start_points = 5000
+    var start_points = 5000
     var time_elapsed = 0;
-		var run_counter = setInterval(function() {
+        var run_counter = setInterval(function() {
                     $( "#points_counter" ).html( start_points - time_elapsed );
                     if (time_elapsed <= start_points) {
-                	time_elapsed += 1;
-            	    }
-                	}, 10);
+                    time_elapsed += 1;
+                    }
+                    }, 10);
 });
-
-
-            $( "#points_counter_2" ).html( start_points - time_elapsed );
-          
+         
 // dialog pops up when you win the level
-
 
 $(function() {
     setInterval(function() {
