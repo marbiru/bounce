@@ -66,19 +66,18 @@ function update() {
 	$(document).keydown(function(e) {
     	switch(e.which) {
     		case 37: // left
+    		ball.vx = ball.vx - 0.01;
         	break;
         	
         	case 38: // up
-        	ball.vy = ball.vy + 0.01;
-        	$( "#dummy_text" ).html( "dummy up" );
-        	//$( "#dummy_text" ).html( "baaaaa" );
         	break;
 
         	case 39: // right
+        	ball.vx = ball.vx + 0.01;
         	break;
 
         	case 40: // down
-        	ball.vy = ball.vy - 0.01;
+        	ball.vy = ball.vy + 0.01;
         	$( "#dummy_text" ).html( "dummy down" );
         	break;
 
