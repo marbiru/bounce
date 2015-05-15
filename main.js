@@ -11,25 +11,4 @@ $(function() {
         }, 10);
 });
 
-// when you press the up arrow the ball slows down
-
-$(document).keydown(function(e) {
-    switch(e.which) {
-        case 37: // left
-        break;
-
-        case 38: // up
-        ball.vy = ball.vy + 1;
-        break;
-
-        case 39: // right
-        break;
-
-        case 40: // down
-        $( "#dummy_text" ).html( "dummy down" );
-        break;
-
-        default: return; // exit this handler for other keys
-    }
-    e.preventDefault(); // prevent the default action (scroll / move caret)
-});
+level_name.innerHTML = level_1_array[0];

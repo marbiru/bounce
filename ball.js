@@ -15,8 +15,8 @@ canvas.height = H; canvas.width = W;
 // Lets define some variables first
 
 var ball = {},
-		gravity = 0.2,
-		bounceFactor = 0.7;
+		gravity = level_1_array[1],
+		bounceFactor = level_1_array[2];
 
 // The ball object
 // It will contain the following details
@@ -27,14 +27,14 @@ var ball = {},
 
 ball = {
 	x: W/2,
-	y: 50,
+	y: level_1_array[3],
 	
 	radius: 15,
 	color: "red",
 	
 	// Velocity components
-	vx: 0.2,
-	vy: 1,
+	vx: level_1_array[4],
+	vy: level_1_array[5],
 	
 	draw: function() {
 		// Here, we'll first begin drawing the path and then use the arc() function to draw the circle. The arc function accepts 6 parameters, x position, y position, radius, start angle, end angle and a boolean for anti-clockwise direction.
@@ -78,7 +78,6 @@ function update() {
 
         	case 40: // down
         	ball.vy = ball.vy + 0.01;
-        	$( "#dummy_text" ).html( "dummy down" );
         	break;
 
         	default: return; // exit this handler for other keys
