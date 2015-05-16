@@ -2,7 +2,7 @@
 
 // Now some basic canvas stuff. Here we'll make a variable for the canvas and then initialize its 2d context for drawing
 var canvas = document.getElementById("canvas"),
-		ctx = canvas.getContext("2d");
+		canvas_context = canvas.getContext("2d");
 
 // Now setting the width and height of the canvas
 var W = 350,
@@ -38,18 +38,18 @@ ball = {
 	
 	draw: function() {
 		// Here, we'll first begin drawing the path and then use the arc() function to draw the circle. The arc function accepts 6 parameters, x position, y position, radius, start angle, end angle and a boolean for anti-clockwise direction.
-		ctx.beginPath();
-		ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
-		ctx.fillStyle = this.color;
-		ctx.fill();
-		ctx.closePath();
+		canvas_context.beginPath();
+		canvas_context.arc(this.x, this.y, this.radius, 0, Math.PI*2, false);
+		canvas_context.fillStyle = this.color;
+		canvas_context.fill();
+		canvas_context.closePath();
 	}
 };
 
 // When we do animations in canvas, we have to repaint the whole canvas in each frame. Either clear the whole area or paint it with some color. This helps in keeping the area clean without any repetition mess.
 // So, lets create a function that will do it for us.
 function clearCanvas() {
-	ctx.clearRect(0, 0, W, H);
+	canvas_context.clearRect(0, 0, W, H);
 }
 
 // A function that will update the position of the ball is also needed. Lets create one

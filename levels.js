@@ -2,6 +2,11 @@
 
 // order of elements:
 // level number,
+// gravity,
+// bounce factor,
+// starting y co-ordinate
+// starting x velocity
+// starting y velocity
 
 level_1_array = [
     1,
