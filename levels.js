@@ -13,8 +13,8 @@
 level_1_array = [
     1,
     0.2,
-    0.7,
-    300,
+    0.99,
+    200,
     0,
     1,
     "Press 'down' key to increase gravity.<br /> Try to bounce the ball so high it flies off the screen!",

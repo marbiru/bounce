@@ -1,29 +1,29 @@
 // initial code from http://cssdeck.com/labs/lets-make-a-bouncing-ball-in-html5-canvas
+current_level = 0;
+current_level_array = levels_array[current_level];
 
 // Now some basic canvas stuff. Here we'll make a variable for the canvas and then initialize its 2d context for drawing
-var canvas = document.getElementById("canvas"),
-		canvas_context = canvas.getContext("2d");
+
+var canvas = document.getElementById("canvas");
+		
+var canvas_context = canvas.getContext("2d");
 
 // Now setting the width and height of the canvas
-var W = 350,
-		H = 450;
+
+var W = 350;
+var H = 450;
 
 // Applying these to the canvas element
-canvas.height = H; canvas.width = W;
+
+canvas.height = H; 
+canvas.width = W;
 
 // First of all we'll create a ball object which will contain all the methods and variables specific to the ball.
 // Lets define some variables first
 
 var ball = {},
 		gravity = current_level_array[1],
-		bounceFactor = window.current_level_array[2];
-
-// The ball object
-// It will contain the following details
-// 1) Its x and y position
-// 2) Radius and color
-// 3) Velocity vectors
-// 4) the method to draw or paint it on the canvas
+		bounceFactor = current_level_array[2];
 
 ball = {
 	x: W/2,
@@ -46,13 +46,14 @@ ball = {
 	}
 };
 
-// When we do animations in canvas, we have to repaint the whole canvas in each frame. Either clear the whole area or paint it with some color. This helps in keeping the area clean without any repetition mess.
-// So, lets create a function that will do it for us.
+// When we do animations in canvas, we have to repaint the whole canvas in each frame. Either clear the whole area or paint it with some color.
+
 function clearCanvas() {
 	canvas_context.clearRect(0, 0, W, H);
 }
 
 // A function that will update the position of the ball is also needed. Lets create one
+
 function update() {
 	clearCanvas();
 	ball.draw();
@@ -103,7 +104,28 @@ function update() {
 	};
 }
 
+// exit function when win condition is met
+
+$(function() {
+	setInterval(function() {
+	ball_height = Math.round(ball.y);
+    if ( ball_height < 0) {
+    	level_name.innerHTML = "ASDFASDFASD"
+    	$( "#canvas" ).stop();
+    } ;
+}, 10);
+});
+
 // Now, the animation time!
 // in setInterval, 1000/x depicts x fps! So, in this casse, we are aiming for 60fps for smoother animations.
 
 setInterval(update, 1000/60);
+
+
+$( "#level_win" ).on( "dialogclose", function() {
+	current_level += 1;
+	current_level_array = levels_array[current_level];
+	level_name.innerHTML = current_level_array[0]
+	instructions.innerHTML = current_level_array[6];
+	main_ball_function();
+});

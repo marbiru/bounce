@@ -5,14 +5,6 @@ current_level_array = levels_array[current_level];
 level_name.innerHTML = current_level_array[0];
 instructions.innerHTML = current_level_array[6];
 
-
-$( "#level_win" ).on( "dialogclose", function() {
-	current_level += 1;
-	current_level_array = levels_array[current_level];
-	level_name.innerHTML = current_level_array[0]
-	instructions.innerHTML = current_level_array[6];
-});
-
 // the timer/points-counter: starts at some number of points and counts down to zero. The faster you complete the level, the more points you'll have
 
 $(function() {
@@ -31,12 +23,15 @@ $(function() {
 
 $(function() {
     	setInterval(function() {
+    	ball = window.ball;
 		ball_height = Math.round(ball.y);
         if ( ball_height < 0) {
             $( "#points_counter" ).html( level_win_dialog() ) 
         } ;
     }, 10);
 });
+
+
 var level_points = points_counter.innerHTML;
 
 function level_win_dialog() {
