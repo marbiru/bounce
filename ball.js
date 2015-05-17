@@ -1,4 +1,6 @@
-// from http://cssdeck.com/labs/lets-make-a-bouncing-ball-in-html5-canvas
+// initial code from http://cssdeck.com/labs/lets-make-a-bouncing-ball-in-html5-canvas
+
+current_level_array = level_2_array;
 
 // Now some basic canvas stuff. Here we'll make a variable for the canvas and then initialize its 2d context for drawing
 var canvas = document.getElementById("canvas"),
@@ -15,8 +17,8 @@ canvas.height = H; canvas.width = W;
 // Lets define some variables first
 
 var ball = {},
-		gravity = level_1_array[1],
-		bounceFactor = level_1_array[2];
+		gravity = current_level_array[1],
+		bounceFactor = current_level_array[2];
 
 // The ball object
 // It will contain the following details
@@ -27,14 +29,14 @@ var ball = {},
 
 ball = {
 	x: W/2,
-	y: level_1_array[3],
+	y: current_level_array[3],
 	
 	radius: 15,
 	color: "red",
 	
 	// Velocity components
-	vx: level_1_array[4],
-	vy: level_1_array[5],
+	vx: current_level_array[4],
+	vy: current_level_array[5],
 	
 	draw: function() {
 		// Here, we'll first begin drawing the path and then use the arc() function to draw the circle. The arc function accepts 6 parameters, x position, y position, radius, start angle, end angle and a boolean for anti-clockwise direction.
@@ -105,5 +107,6 @@ function update() {
 
 // Now, the animation time!
 // in setInterval, 1000/x depicts x fps! So, in this casse, we are aiming for 60fps for smoother animations.
+
 setInterval(update, 1000/60);
 

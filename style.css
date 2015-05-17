@@ -4,7 +4,16 @@
 	margin: 50px auto;
 }
 
+h1 {
+  color: #21043C;
+  font-size: 40px;
+  font-family: "Lobster", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
+}
+
 p {
-	text-align: center;
-	font-size: 30px;
+  color: #21043C;
+  font-size: 30px;
+  font-family: "Special Elite", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-align: center;
 }

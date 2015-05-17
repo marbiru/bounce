@@ -2,12 +2,15 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css">  
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/blitzer/jquery-ui.css"> 
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Raleway:200">
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'> 
+    <link href='http://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
   </head>
   
   <body>
 
-    <p>Level <span id="level_name"></span></p>
+    <h1>Level <span id="level_name"></span></h1>
 
     <canvas id="canvas"></canvas>
     
@@ -16,13 +19,14 @@
     <p> Press "down" key to increase gravity.<br /> 
       Try to bounce the ball so high it flies off the screen! </p>
 
+
     <p id="level_win" title="Woohoo!"></p>
   
   <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
   <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <script type="text/javascript" src="levels.js"></script>
-  <script type="text/javascript" src="ball.js"></script>
   <script type="text/javascript" src="main.js"></script>
+  <script type="text/javascript" src="ball.js"></script>
   </body>
 
 </html>

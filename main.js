@@ -4,7 +4,8 @@ $(function() {
 	var start_points = 5000;
     var time_elapsed = 0;
 		setInterval(function() {
-            $( "#points_counter" ).html( start_points - time_elapsed );
+			current_points = start_points - time_elapsed;
+            $( "#points_counter" ).html( current_points );
                 if (time_elapsed + 1 < start_points) {
                         time_elapsed += 1;
             }
@@ -13,7 +14,7 @@ $(function() {
 
 // dialog popup on winning the level
 
-var level_points = 25;
+
 
 $(function() {
     	setInterval(function() {
@@ -23,6 +24,7 @@ $(function() {
         } ;
     }, 10);
 });
+var level_points = points_counter.innerHTML;
 
 function level_win_dialog() {
     $(function() {
