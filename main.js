@@ -13,15 +13,12 @@ $(function() {
 
 // dialog popup on winning the level
 
-level_win.innerHTML = "You won with XXX points!";
+var level_points = 25;
 
 $(function() {
     	setInterval(function() {
 		ball_height = Math.round(ball.y);
-        if ( ball_height > 410) {
-        	var x = 0;
-        } else {
-        	level_name.innerHTML = ball_height;
+        if ( ball_height < 0) {
             $( "#points_counter" ).html( level_win_dialog() ) 
         } ;
     }, 10);
@@ -29,6 +26,8 @@ $(function() {
 
 function level_win_dialog() {
     $(function() {
+    	var level_win_text = "You won the level with <br />" + level_points + " points!";
+    	level_win.innerHTML = level_win_text;
         $( "#level_win" ).dialog( {
           show: {
             effect: "puff",
