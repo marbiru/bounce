@@ -11,4 +11,35 @@ $(function() {
         }, 10);
 });
 
+// dialog popup on winning the level
+
+level_win.innerHTML = "You won with XXX points!";
+
+$(function() {
+    	setInterval(function() {
+		ball_height = Math.round(ball.y);
+        if ( ball_height > 410) {
+        	var x = 0;
+        } else {
+        	level_name.innerHTML = ball_height;
+            $( "#points_counter" ).html( level_win_dialog() ) 
+        } ;
+    }, 10);
+});
+
+function level_win_dialog() {
+    $(function() {
+        $( "#level_win" ).dialog( {
+          show: {
+            effect: "puff",
+            duration: 500
+       },
+          hide: {
+            effect: "scale",
+            duration: 500
+          }
+      });
+    });
+};
+
 level_name.innerHTML = level_1_array[0];
