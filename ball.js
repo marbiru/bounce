@@ -1,7 +1,4 @@
 // initial code from http://cssdeck.com/labs/lets-make-a-bouncing-ball-in-html5-canvas
-current_level = 0;
-current_level_array = levels_array[current_level];
-
 // Now some basic canvas stuff. Here we'll make a variable for the canvas and then initialize its 2d context for drawing
 
 var canvas = document.getElementById("canvas");
@@ -108,12 +105,3 @@ function update() {
 // in setInterval, 1000/x depicts x fps! So, in this casse, we are aiming for 60fps for smoother animations.
 
 setInterval(update, 1000/60);
-
-
-$( "#level_win" ).on( "dialogclose", function() {
-	current_level += 1;
-	current_level_array = levels_array[current_level];
-	level_name.innerHTML = current_level_array[0]
-	instructions.innerHTML = current_level_array[6];
-	main_ball_function();
-});

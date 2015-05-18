@@ -8,7 +8,6 @@
 // 4 starting x velocity
 // 5 starting y velocity
 // 6 instructions
-// 7 victory messages
 
 level_1_array = [
     1,
@@ -22,9 +21,9 @@ level_1_array = [
 
 level_2_array = [
 	2,
-	0.25,
+	0.2,
 	0.7,
-	400,
+	300,
 	0,
 	1,
 	"Nice work! But it's only going to get harder now.",
@@ -32,22 +31,22 @@ level_2_array = [
 
 level_3_array = [
 	3,
-	0.3,
-	0.7,
+	0.25,
+	0.6,
 	400,
 	0,
 	1,
-	"Phew! I can't believe you did that.",
+	"Phew! I can't believe you did that.<br /> This level is HARD, though.",
 ];
 
 level_4_array = [
 	4,
-	0.4,
-	0.65,
+	0.3,
+	0.5,
 	450,
 	0,
 	1,
-	"I'm not going to lie, I'm not 100% sure this level is winnable."
+	"I'm not going to lie, <br /> this level might not be winnable.",
 ];
 
 

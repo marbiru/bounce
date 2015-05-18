@@ -1,24 +1,24 @@
 // figure out current level
 
-current_level = 0;
+current_level = 3;
 current_level_array = levels_array[current_level];
 level_name.innerHTML = current_level_array[0];
 instructions.innerHTML = current_level_array[6];
 
-// the timer/points-counter: starts at some number of points and counts down to zero. The faster you complete the level, the more points you'll have
+// the points counter
 
 $(function() {
 	var start_points = 5000;
     var time_elapsed = 0;
     ball = window.ball;
-		ball_height = Math.round(ball.y);
-		setInterval(function() {
-			current_points = start_points - time_elapsed;
-            $( "#points_output" ).html( current_points );
-                if ((time_elapsed + 1 < start_points) && (ball_height > 0)) {
-                        time_elapsed += 1;
-            }
-        }, 10);
+	ball_height = Math.round(ball.y);
+	setInterval(function() {
+		current_points = start_points - time_elapsed;
+        $( "#points_output" ).html( current_points );
+            if ((time_elapsed + 1 < start_points) && (ball_height > 0)) {
+                    time_elapsed += 1;
+        }
+    }, 10);
 });
 
 // dialog popup on winning the level
@@ -49,3 +49,10 @@ function level_win_dialog() {
       });
     });
 };
+
+$( "#level_win" ).on( "dialogclose", function() {
+	current_level += 1;
+	current_level_array = levels_array[current_level];
+	level_name.innerHTML = current_level_array[0]
+	instructions.innerHTML = current_level_array[6];
+});
