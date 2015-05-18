@@ -12,7 +12,7 @@ $(function() {
     var time_elapsed = 0;
 		setInterval(function() {
 			current_points = start_points - time_elapsed;
-            $( "#points_counter" ).html( current_points );
+            $( "#points_output" ).html( current_points );
                 if (time_elapsed + 1 < start_points) {
                         time_elapsed += 1;
             }
@@ -26,17 +26,14 @@ $(function() {
     	ball = window.ball;
 		ball_height = Math.round(ball.y);
         if ( ball_height < 0) {
-            $( "#points_counter" ).html( level_win_dialog() ) 
+            $( "#points_output" ).html( level_win_dialog() ) 
         } ;
     }, 10);
 });
 
-
-var level_points = points_counter.innerHTML;
-
 function level_win_dialog() {
     $(function() {
-    	var level_win_text = "You won the level with <br />" + level_points + " points!";
+    	var level_win_text = "You won the level with <br />" + current_points + " points!";
     	level_win.innerHTML = level_win_text;
         $( "#level_win" ).dialog( {
           show: {

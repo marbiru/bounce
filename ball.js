@@ -104,18 +104,6 @@ function update() {
 	};
 }
 
-// exit function when win condition is met
-
-$(function() {
-	setInterval(function() {
-	ball_height = Math.round(ball.y);
-    if ( ball_height < 0) {
-    	level_name.innerHTML = "ASDFASDFASD"
-    	$( "#canvas" ).stop();
-    } ;
-}, 10);
-});
-
 // Now, the animation time!
 // in setInterval, 1000/x depicts x fps! So, in this casse, we are aiming for 60fps for smoother animations.
 
