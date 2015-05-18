@@ -10,7 +10,7 @@ instructions.innerHTML = current_level_array[6];
 $(function() {
 	var start_points = 5000;
     var time_elapsed = 0;
-    ball = window.ball;
+    ball = ball;
 	ball_height = Math.round(ball.y);
 	setInterval(function() {
 		current_points = start_points - time_elapsed;
@@ -25,7 +25,7 @@ $(function() {
 
 $(function() {
     	setInterval(function() {
-    	ball = window.ball;
+    	ball = ball;
 		ball_height = Math.round(ball.y);
         if ( ball_height < 0) {
             $( "#points_output" ).html( level_win_dialog() ) 
