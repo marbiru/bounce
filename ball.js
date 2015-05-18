@@ -98,7 +98,8 @@ function update() {
 	};
 }
 
-// in setInterval, 1000/x depicts x fps! So, in this casse, we are aiming for 60fps for smoother animations.
+var update_ball = setInterval(update, 1000/60);
 
-setInterval(update, 20);
-
+$( "#dummy" ).click(function() {
+  	clearInterval(update_ball);
+});
