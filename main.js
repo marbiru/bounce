@@ -53,4 +53,6 @@ $( "#level_win" ).on( "dialogclose", function() {
 	current_level_array = levels_array[current_level];
 	level_name.innerHTML = current_level_array[0]
 	instructions.innerHTML = current_level_array[6];
+	clear_canvas();
+	deploy_ball();
 });
