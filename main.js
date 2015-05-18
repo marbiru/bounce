@@ -10,10 +10,12 @@ instructions.innerHTML = current_level_array[6];
 $(function() {
 	var start_points = 5000;
     var time_elapsed = 0;
+    ball = window.ball;
+		ball_height = Math.round(ball.y);
 		setInterval(function() {
 			current_points = start_points - time_elapsed;
             $( "#points_output" ).html( current_points );
-                if (time_elapsed + 1 < start_points) {
+                if ((time_elapsed + 1 < start_points) && (ball_height > 0)) {
                         time_elapsed += 1;
             }
         }, 10);
