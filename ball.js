@@ -18,12 +18,10 @@ canvas.height = canvas_height;
 // Lets define some variables first
 
 var ball = {};
-		
+gravity = current_level_array[1];
+bounceFactor = current_level_array[2];
 
-function deploy_ball() {
-	gravity = current_level_array[1];
-	bounceFactor = current_level_array[2];
-	ball = {
+ball = {
 		x: canvas_width/2,
 		y: current_level_array[3],
 		
@@ -41,10 +39,7 @@ function deploy_ball() {
 			canvas_context.fill();
 			canvas_context.closePath();
 		}
-	};
 };
-
-deploy_ball();
 
 // When we do animations in canvas, we have to repaint the whole canvas in each frame. Either clear the whole area or paint it with some color.
 
@@ -98,15 +93,36 @@ function update() {
 		ball.x = 0 + ball.radius;
 		ball.vx *= -bounceFactor;
 	};
+
 }
 
-var update_ball = setInterval(update, 1000/60);
-
-$(function() {
+function update_ball() { 
+	setInterval(update, 1000/60);
 	ball_height = Math.round(ball.y);
-    setInterval(function() {
-        if ( ball_height < 0) {
-            clearInterval(update_ball); 
-        } ;
-    }, 10);
+    if ( ball_height < 0) {
+    	clearInterval(); 
+    };
+};
+
+$( update_ball() );
+	
+function reset_variables() {
+	gravity = current_level_array[1];
+	bounceFactor = current_level_array[2];
+	ball.vx = 0;
+	ball.vy = 0;
+	ball.x = canvas_width/2;
+	ball.y = current_level_array[3];
+	ball.vx = current_level_array[4];
+	ball.vy = current_level_array[5];
+};
+
+$( "#level_win" ).on( "dialogclose", function() {
+	current_level += 1;
+	reset_variables();
+	dummy1.innerHTML = "ball.gravity = " + gravity;
+	current_level_array = levels_array[current_level];
+	level_name.innerHTML = current_level_array[0];
+	instructions.innerHTML = current_level_array[6];
+	update_ball();
 });

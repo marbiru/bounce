@@ -13,7 +13,7 @@ level_1_array = [
     1,
     0.2,
     0.8,
-    200,
+    100,
     0,
     1,
     "Press 'down' key to increase gravity.<br /> Try to bounce the ball so high it flies off the screen!",
@@ -56,3 +56,11 @@ levels_array = [
 	level_3_array,
 	level_4_array,
 ];
+
+// initialise levels
+// figure out current level
+
+current_level = 0;
+current_level_array = levels_array[current_level];
+level_name.innerHTML = current_level_array[0];
+instructions.innerHTML = current_level_array[6];
