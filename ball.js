@@ -100,6 +100,11 @@ function update() {
 
 var update_ball = setInterval(update, 1000/60);
 
-$( "#dummy" ).click(function() {
-  	clearInterval(update_ball);
+$(function() {
+    	setInterval(function() {
+		ball_height = Math.round(ball.y);
+        if ( ball_height < 0) {
+            clearInterval(update_ball); 
+        } ;
+    }, 10);
 });
