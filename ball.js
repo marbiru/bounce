@@ -19,7 +19,7 @@ canvas.height = canvas_height;
 
 var ball = {};
 gravity = current_level_array[1];
-bounceFactor = current_level_array[2];
+bounce_factor = current_level_array[2];
 
 ball = {
 		x: canvas_width/2,
@@ -80,18 +80,18 @@ function update() {
 	if(ball.y + ball.radius > canvas_height) {
 		// First, reposition the ball on top of the floor and then bounce it!
 		ball.y = canvas_height - ball.radius;
-		ball.vy *= -bounceFactor;
-		// The bounceFactor variable that we created decides the elasticity or how elastic the collision will be. If it's 1, then the collision will be perfectly elastic. If 0, then it will be inelastic.
+		ball.vy *= -bounce_factor;
+		// The bounce_factor variable that we created decides the elasticity or how elastic the collision will be. If it's 1, then the collision will be perfectly elastic. If 0, then it will be inelastic.
 	};
 	//  sideways bounce!
 	if(ball.x + ball.radius > canvas_width) {
 		ball.x = canvas_width - ball.radius;
-		ball.vx *= -bounceFactor;
+		ball.vx *= -bounce_factor;
 	};
 
 	if(ball.x - ball.radius < 0) {
 		ball.x = 0 + ball.radius;
-		ball.vx *= -bounceFactor;
+		ball.vx *= -bounce_factor;
 	};
 
 }
@@ -108,7 +108,7 @@ $( update_ball() );
 	
 function reset_variables() {
 	gravity = current_level_array[1];
-	bounceFactor = current_level_array[2];
+	bounce_factor = current_level_array[2];
 	ball.vx = 0;
 	ball.vy = 0;
 	ball.x = canvas_width/2;
